@@ -1,13 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import {WeatherIcons} from "../App";
+import temp from "../icons/temp.svg";
+import humidity from "../icons/humidity.svg";
+import wind from "../icons/wind.svg";
+import pressure from "../icons/pressure.svg";
 
 export const WeatherInfoIcons = {
-    Жаргах: "/react-weather-app/icons/temp.svg",
-    Мандах: "/react-weather-app/icons/temp.svg",
-    Чийг: "/react-weather-app/icons/humidity.svg",
-    Салхи: "/react-weather-app/icons/wind.svg",
-    Даралт: "/react-weather-app/icons/pressure.svg",
+    Жаргах: temp,
+    Мандах: temp,
+    Чийг: humidity,
+    Салхи: wind,
+    Даралт: pressure,
 };
 const Location = styled.span`
   margin: 15px auto;
@@ -105,6 +109,7 @@ const WeatherComponent = (props) => {
             <Location>{`${weather?.name}, ${weather?.sys?.country}`}</Location>
 
             <WeatherInfoLabel>Цаг агаарын мэдээ</WeatherInfoLabel>
+            <WeatherInfoLabel>{Date().toLocaleString()}</WeatherInfoLabel>
             <WeatherInfoContainer>
                 <WeatherInfoComponent name={isDay ? "Жаргах" : "Мандах"}
                                       value={`${getTime(weather?.sys[isDay ? "sunset" : "sunrise"])}`}/>

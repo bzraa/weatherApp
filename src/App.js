@@ -3,22 +3,31 @@ import styled from "styled-components";
 import Axios from "axios";
 import CityComponent from "./modules/CityComponent";
 import WeatherComponent from "./modules/WeatherInfoComponent";
+import Sunny from "./icons/sunny.svg";
+import Night from "./icons/night.svg";
+import Day from "./icons/day.svg";
+import cloudyNight from "./icons/cloudy-night.svg";
+import cloudy from "./icons/cloudy.svg";
+import PerfectDay from "./icons/perfect-day.svg";
+import Rain from "./icons/rain.svg";
+import RainNight from "./icons/rain-night.svg";
+import Storm from "./icons/storm.svg";
 
 export const WeatherIcons = {
-  "01d": "/react-weather-app/src/icons/sunny.svg",
-  "01n": "/react-weather-app/src/icons/night.svg",
-  "02d": "/react-weather-app/src/icons/day.svg",
-  "02n": "/react-weather-app/src/icons/cloudy-night.svg",
-  "03d": "/react-weather-app/src/icons/cloudy.svg",
-  "03n": "/react-weather-app/src/icons/cloudy.svg",
-  "04d": "/react-weather-app/src/icons/perfect-day.svg",
-  "04n": "/react-weather-app/src/icons/cloudy-night.svg",
-  "09d": "/react-weather-app/src/icons/rain.svg",
-  "09n": "/react-weather-app/src/icons/rain-night.svg",
-  "10d": "/react-weather-app/src/icons/rain.svg",
-  "10n": "/react-weather-app/src/icons/rain-night.svg",
-  "11d": "/react-weather-app/src/icons/storm.svg",
-  "11n": "/react-weather-app/src/icons/storm.svg",
+  "01d": Sunny,
+  "01n": Night,
+  "02d": Day,
+  "02n": cloudyNight,
+  "03d": cloudy,
+  "03n": cloudy,
+  "04d": PerfectDay,
+  "04n": cloudyNight,
+  "09d": Rain,
+  "09n": RainNight,
+  "10d": Rain,
+  "10n": RainNight,
+  "11d": Storm,
+  "11n": Storm,
 };
 
 const Container = styled.div`
@@ -60,7 +69,7 @@ function App() {
   };
   return (
     <Container>
-      <AppLabel>Цаг агаар</AppLabel>
+      <AppLabel>Цаг Агаар</AppLabel>
       {city && weather ? (
         <WeatherComponent weather={weather} city={city} />
       ) : (

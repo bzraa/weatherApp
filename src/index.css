@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: linear-gradient(papayawhip, white);
+    background: linear-gradient(rgb(0, 172, 181), white);
     display: flex;
     justify-content: center;
     align-items: center;
